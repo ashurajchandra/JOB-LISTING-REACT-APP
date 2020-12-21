@@ -33,12 +33,15 @@ class App extends Component {
      lists.push(obj);
       this.setState({
         lists: lists,
-        name:'',
-        job:''
+        // name:'',
+        // job:''
+       
       })
     }
     else{
       alert('pliss fill input')
+   
+      
     }
   
     
@@ -48,8 +51,11 @@ class App extends Component {
     console.log('ind', ind);
     const{lists} = this.state;
     console.log('lists',lists)
+    const{list} = this.state.lists;
+    console.log('list', list);
+
     const filteredItems= lists.filter((list,index) =>
-    list.index ===ind);
+     index !== ind);
     console.log('filteredItems',filteredItems);
     this.setState({
       lists:filteredItems
@@ -75,8 +81,12 @@ class App extends Component {
           <p>Job</p>
           <input id="job" placeholder="enter your job title" onChange={this.handleChange}  type="text"/>
           <button onClick={this.handleSubmit}>Submit</button>
+          {/* {lists.map((list,index)=>
+           <List index={index} list={list} handleDelete={this.handleDelete}/>)} */}
+             <List lists={lists} handleDelete={this.handleDelete}/>
+
           </form>
-          {lists.map((list,index)=> <List index={index} list={list} handleDelete={this.handleDelete}/>)}
+          {/* {lists.map((list,index)=> <List index={index} list={list} handleDelete={this.handleDelete}/>)} */}
       </div>
     );
   }

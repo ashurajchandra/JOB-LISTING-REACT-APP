@@ -36,9 +36,22 @@
 }
 .list{
   margin: 15% 5% 5% 5%;
-  height: 320px;
+  height: max-content;
     background-color: brown;
 }
+.list p{
+  font-size: 23px;
+    padding-bottom: 25px;
+}
+.list button{
+  font-size: 22px;
+  font-weight: bolder;
+  height: 40px;
+  border-radius: 8px;
+  background-color: rgba(160, 137, 95, 0.685);
+  margin-top: -10px;
+}
+
 #h1-tag{
   border-bottom: oldlace 2px solid;
   margin-left: 10px;
